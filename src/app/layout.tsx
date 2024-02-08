@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+// import { PrimeReactProvider } from 'primereact/api';
 import { ReactNode } from 'react';
 
 import { MainProvider } from '@/components/providers/MainProvider';

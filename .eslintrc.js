@@ -55,6 +55,7 @@ module.exports = {
         groups: [
           ['/^next/', 'module'],
           '/^@/styles/',
+          '/^@/app/',
           '/^@/components/',
           '/^@/lib/',
           ['parent', 'sibling', 'index']
@@ -77,5 +78,6 @@ module.exports = {
         allow: ['warn', 'error']
       }
     ]
-  }
+  },
+  ignorePatterns: ['**/*.css', '**/*.scss']
 };
