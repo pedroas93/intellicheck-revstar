@@ -1,12 +1,13 @@
-// import { render, screen } from '@/tests/test-utils';
+import { render, screen } from '@/tests/test-utils';
 
-// import { AuthenticateCode } from '.';
+import { AuthenticateCode } from '.';
 
-// describe('AuthenticateCode', () => {
-//   it('should render the heading', () => {
-//     render(<AuthenticateCode />);
+describe('AuthenticateCode', () => {
+  it('should render successfully', () => {
+    render(<AuthenticateCode />);
 
-//     // Assert
-//     screen.getByRole('heading', { name: /AuthenticateCode/i });
-//   });
-// });
+    // Assert
+    // For example, checking if a certain text content is present
+    expect(screen.getByText(/some text in your component/i)).toBeInTheDocument();
+  });
+});
