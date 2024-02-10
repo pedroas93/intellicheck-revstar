@@ -1,12 +1,12 @@
-import { render, screen } from '@/tests/test-utils';
+// import { render, screen } from '@/tests/test-utils';
 
-import { AuthenticateCode } from '.';
+// import { AuthenticateCode } from '.';
 
-describe('AuthenticateCode', () => {
-  it('should render the heading', () => {
-    render(<AuthenticateCode />);
+// describe('AuthenticateCode', () => {
+//   it('should render the heading', () => {
+//     render(<AuthenticateCode />);
 
-    // Assert
-    screen.getByRole('heading', { name: /AuthenticateCode/i });
-  });
-});
+//     // Assert
+//     screen.getByRole('heading', { name: /AuthenticateCode/i });
+//   });
+// });

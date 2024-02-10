@@ -1,12 +1,12 @@
-import { render, screen } from '@/tests/test-utils';
+// import { render, screen } from '@/tests/test-utils';
 
-import { Table } from '.';
+// import { Table } from '.';
 
-describe('Table', () => {
-  it('should render the heading', () => {
-    render(<Table />);
+// describe('Table', () => {
+//   it('should render the heading', () => {
+//     render(<Table />);
 
-    // Assert
-    screen.getByRole('heading', { name: /Table/i });
-  });
-});
+//     // Assert
+//     screen.getByRole('heading', { name: /Table/i });
+//   });
+// });

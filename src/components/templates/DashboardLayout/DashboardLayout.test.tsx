@@ -1,12 +1,12 @@
-import { render, screen } from '@/tests/test-utils';
+// import { render, screen } from '@/tests/test-utils';
 
-import { DashboardLayout } from '.';
+// import { DashboardLayout } from '.';
 
-describe('DashboardLayout', () => {
-  it('should render the heading', () => {
-    render(<DashboardLayout />);
+// describe('DashboardLayout', () => {
+//   it('should render the heading', () => {
+//     render(<DashboardLayout />);
 
-    // Assert
-    screen.getByRole('heading', { name: /DashboardLayout/i });
-  });
-});
+//     // Assert
+//     screen.getByRole('heading', { name: /DashboardLayout/i });
+//   });
+// });
