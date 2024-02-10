@@ -5,6 +5,7 @@
 import React, { useState } from 'react';
 
 import { LoginForm } from '@/components/organisms/LoginForm';
+import { MainLayout } from '@/components/templates/MainLayout';
 
 type LoginData = {
   email: string;
@@ -28,12 +29,16 @@ const Login: React.FC = () => {
   )}@${emailParts[1]}`;
 
   // eslint-disable-next-line no-console
-  console.log('children --> ', hiddenEmail);
+  console.log('hiddenEmail', hiddenEmail);
 
   return (
-    <div className="flex flex-col items-center gap-3 h-full w-full">
-      {loginMfa ? <LoginForm handleSuccessLogin={successFirstLogin} /> : <p>ERROR PAGE</p>}
-    </div>
+    <>
+      <MainLayout>
+        <div className="flex flex-col items-center gap-3 h-full w-full">
+          {loginMfa ? <LoginForm handleSuccessLogin={successFirstLogin} /> : <p>ERROR PAGE</p>}
+        </div>
+      </MainLayout>
+    </>
   );
 };
 

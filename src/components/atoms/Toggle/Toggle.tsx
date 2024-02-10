@@ -1,6 +1,6 @@
 import React from 'react';
 import type { FC } from 'react';
-import './Toggle.css';
+// import './Toggle.css';
 
 interface AvatarProps {
   checked?: boolean;

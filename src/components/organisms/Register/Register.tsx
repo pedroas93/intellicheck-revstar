@@ -20,7 +20,7 @@ import { sendToLocalStorage } from '../../../utils/local-storage';
 import { registerFields } from '../../../utils/Schemas/input-fields';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { RegisterSchema, RegisterSchemaFirstStep } from '../../../utils/Schemas/LoginSchemas';
-import './register.css';
+// import './register.css';
 
 // type LoginData = {
 //   email: string;

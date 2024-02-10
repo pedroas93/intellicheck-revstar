@@ -1,190 +1,105 @@
-// import { useDebounce } from '@/hooks/debounce';
-// import type { FC, ReactElement } from 'react';
-// import { useEffect, useState } from 'react';
-// // eslint-disable-next-line import-helpers/order-imports
-// import React from 'react';
-// // eslint-disable-next-line import-helpers/order-imports
-// // import DataTable from 'react-data-table-component';
-// // eslint-disable-next-line import-helpers/order-imports
-// import { Button } from '@/components/atoms/Button';
-// // import { Icon } from "@/components/ui/Icon";
-// import { Modal } from '@/components/atoms/Modal';
-// import { TableHeader } from '@/components/atoms/TableHeader';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+import { type FC, useState } from 'react';
+import React from 'react';
 
-// interface Column {
-//   name?: string;
-//   selector?: (row: unknown) => unknown;
-//   sortable?: boolean;
-//   omit?: boolean;
-// }
+import { BreadCrumb } from '@/components/atoms/BreadCrumb';
+import { Tabs } from '@/components/atoms/Tabs';
+import { Table } from '@/components/organisms/Table';
+// import type { User } from '../../types/dashborad';
+// import { useNavigate } from '@tanstack/router';
+// import { TableStatus } from '../TableStatus/TableStatus';
 
-// interface TableProps {
-//   columns?: Array<Column>;
-//   data?: unknown;
-//   showAddButton?: boolean;
-//   children?: ReactElement;
-//   buttonText?: string;
-//   checkedValue?: boolean;
-//   handleSearchValue?: (value: string) => string;
-//   handleCheckValue?: (value: unknown) => void;
-//   conditionalRowStyles?: unknown;
-//   onClickButton?: () => void;
-//   widthSearch?: string;
-//   loading?: boolean;
-//   onRowClicked?: (row: unknown) => void;
-// }
+interface SuccessProps {}
 
-// export const Table: FC<TableProps> = ({
-//   columns = [],
-//   // data,
-//   children,
-//   buttonText,
-//   handleSearchValue,
-//   // handleCheckValue,
-//   // checkedValue = true,
-//   // conditionalRowStyles,
-//   onClickButton,
-//   // widthSearch = '158px',
-//   // loading,
-//   // onRowClicked,
-//   showAddButton
-// }) => {
-//   const [visible, setVisible] = useState(false);
-//   const [stateColumns, setStateColumns] = useState<Array<Column>>(columns);
-//   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-//   const [searchMenu, setSearchMenu] = useState<boolean>(false);
-//   const [searchValue, setSearchValue] = useState<string>('');
-//   const [value, setValue] = useState<string>('');
-//   const debouncedSearchTerm = useDebounce(value, 1000);
+export const TableComponent: FC<SuccessProps> = () => {
+  //   const navigate = useNavigate();
+  const [dataUsers] = useState([]);
 
-//   const handleCloseEye = (id: number): void => {
-//     const newColumns = stateColumns.map((column, key: number) => {
-//       if (key === id) {
-//         return { ...column, omit: !column.omit };
-//       }
+  //   const getUsers = async (): Promise<void> => {
+  //     try {
+  //       const apiUrl = 'http://localhost:3000/get-users';
+  //       const response = await axios.get(apiUrl);
 
-//       return column;
-//     });
-//     setStateColumns(newColumns);
-//   };
+  //       console.log('response data table ---> ', response);
 
-//   useEffect(() => {
-//     if (searchValue === '') {
-//       setValue('');
-//     }
-//   }, [searchValue]);
+  //       if (response.data && response.data.users) {
+  //         const dataResponse = response.data.users.map((user) => ({
+  //           id: user.id,
+  //           name: user.name || '',
+  //           email: user.email || '',
+  //           phone: user.phoneNumber || '',
+  //           status: user.status || '',
+  //           role: user.role || ''
+  //         }));
 
-//   useEffect(() => {
-//     if (handleSearchValue) {
-//       handleSearchValue(debouncedSearchTerm);
-//       if (value === '') {
-//         setSearchValue(debouncedSearchTerm);
-//       } else {
-//         setSearchValue('');
-//       }
-//     }
-//   }, [debouncedSearchTerm, handleSearchValue, value]);
+  //         setDataUsers(dataResponse);
+  //       } else {
+  //         console.error("Invalid response format. 'users' property not found.");
+  //       }
+  //     } catch (error) {
+  //       console.error(error);
+  //       console.error('Error fetching data:', error);
+  //     }
+  //   };
 
-//   const showAllColumn = (): void => {
-//     const newColumns = stateColumns.map((data: Column) => {
-//       return { ...data, omit: false };
-//     });
+  //   useEffect(() => {
+  //     getUsers();
+  //   }, []);
 
-//     setStateColumns(newColumns);
-//   };
+  //   const columns = [
+  //     {
+  //       maxWidth: '50px',
+  //       omit: false
+  //     },
+  //     {
+  //       name: 'name',
+  //       selector: (row: User): string => `${row?.name}`,
+  //       sortable: true,
+  //       omit: false
+  //     },
+  //     {
+  //       name: 'Email',
+  //       selector: (row: User): string => row?.email || '',
+  //       sortable: true,
+  //       omit: false
+  //     },
+  //     {
+  //       name: 'Phone Number',
+  //       selector: (row: User): string => row?.phone || '',
+  //       omit: false
+  //     },
+  //     {
+  //       name: 'Role',
+  //       selector: (row: User): string => row?.role || '',
+  //       omit: false
+  //     },
+  //     {
+  //       name: 'Status',
+  //       maxWidth: '50px',
+  //       selector: (row: User): JSX.Element => (
+  //         <TableStatus status={row.status ? 'Active' : 'Inactive'} />
+  //       ),
+  //       sortable: true,
+  //       omit: false
+  //     }
+  //   ];
 
-//   return (
-//     <div className="flex flex-col w-full h-full">
-//       {children}
-//       <div className="header-table">
-//         <TableHeader
-//           add={true}
-//           nameView={'Manage Users'}
-//           visible={visible}
-//           setVisible={setVisible}
-//         />
-//         <div
-//           className={`flex justify-end gap-2 items-center bg-primary-500 h-[50px]`}
-//           style={{ position: 'relative', width: '180px' }}
-//         >
-//           <div
-//             className={`w-[50px] h-[30px] rounded-[10px] bg-black-100 flex items-center justify-center cursor-pointer hover:bg-white z-10 `}
-//             onMouseEnter={(): void => {
-//               setSearchMenu(true);
-//             }}
-//             onMouseLeave={(): void => {
-//               setSearchMenu(false);
-//             }}
-//             onClick={(): void => {
-//               setVisible(true);
-//             }}
-//           >
-//             {/* <Icon
-// 				name="menuTable"
-// 				width="18"
-// 				color={`${searchMenu ? "#0e2130" : "white"}`}
-// 			/> */}
-//           </div>
-
-//           {buttonText && showAddButton && (
-//             <div className="">
-//               <Button buttonText={buttonText} variant={'white'} onClick={onClickButton} />
-//             </div>
-//           )}
-//         </div>
-//       </div>
-//       <div className="h-full w-full rounded-3xl bg-white">
-//         <div className="rounded-3xl h-[85vh] overflow-auto">
-//           {/* <DataTable
-//             fixedHeader
-//             columns={stateColumns}
-//             data={data}
-//             className="h-[85vh]"
-//             progressPending={loading}
-//             conditionalRowStyles={conditionalRowStyles}
-//             onRowClicked={onRowClicked}
-//           /> */}
-//         </div>
-//       </div>
-
-//       <Modal
-//         visible={visible}
-//         onHide={(): void => {
-//           setVisible(false);
-//         }}
-//         title="Manage Columns"
-//         subTitle="Fill out some information"
-//         width="20vw"
-//       >
-//         <div className="flex flex-col items-center justify-between gap-5 " style={{ width: '98%' }}>
-//           <div
-//             className="flex justify-end w-full cursor-pointer text-blue-100 text-[13px]"
-//             onClick={showAllColumn}
-//           >
-//             Show All
-//           </div>
-//           {stateColumns?.map((data, key: number) => {
-//             return (
-//               <div key={key} className="flex items-center justify-between w-full">
-//                 <div className="flex items-center justify-center gap-2">{data?.name}</div>
-
-//                 <div
-//                   onClick={(): void => {
-//                     handleCloseEye(key);
-//                   }}
-//                   className="cursor-pointer"
-//                 >
-//                   {/* <Icon
-// 						name={data?.omit ? "closeEye" : "openEye"}
-// 						width="18"
-// 						color="black"
-// 					/> */}
-//                 </div>
-//               </div>
-//             );
-//           })}
-//         </div>
-//       </Modal>
-//     </div>
-//   );
-// };
+  return (
+    <>
+      <Table data={dataUsers} buttonText="Add admin">
+        <>
+          <div>
+            <BreadCrumb initialTab="Dashboard" actualTab="manage users" />
+          </div>
+          <div className="relative z-10">
+            <Tabs actualTab="admins" />
+          </div>
+        </>
+      </Table>
+    </>
+  );
+};
