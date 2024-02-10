@@ -1,4 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
- yarn test:ci
+# Use pnpm instead of yarn
+pnpm run test:ci
