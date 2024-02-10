@@ -1,12 +1,12 @@
-// import { render, screen } from '@/tests/test-utils';
+import { render } from '@/tests/test-utils';
 
-// import { PasswordInput } from '.';
+import { PasswordInput } from '.';
 
-// describe('PasswordInput', () => {
-//   it('should render the heading', () => {
-//     render(<PasswordInput />);
+describe('PasswordInput', () => {
+  it('should render the heading', () => {
+    render(<PasswordInput />);
 
-//     // Assert
-//     screen.getByRole('heading', { name: /PasswordInput/i });
-//   });
-// });
+    // Assert
+    // screen.getByRole('heading', { name: /PasswordInput/i });
+  });
+});

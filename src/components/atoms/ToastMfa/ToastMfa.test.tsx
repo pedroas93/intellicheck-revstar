@@ -1,12 +1,12 @@
-// import { render, screen } from '@/tests/test-utils';
+import { render } from '@/tests/test-utils';
 
-// import { ToastMfa } from '.';
+import { ToastMfa } from '.';
 
-// describe('ToastMfa', () => {
-//   it('should render the heading', () => {
-//     render(<ToastMfa />);
+describe('ToastMfa', () => {
+  it('should render the heading', () => {
+    render(<ToastMfa />);
 
-//     // Assert
-//     screen.getByRole('heading', { name: /ToastMfa/i });
-//   });
-// });
+    // Assert
+    // screen.getByRole('heading', { name: /ToastMfa/i });
+  });
+});

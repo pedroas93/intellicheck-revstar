@@ -1,12 +1,12 @@
-// import { render, screen } from '@/tests/test-utils';
+import { render } from '@/tests/test-utils';
 
-// import { BreadCrumb } from '.';
+import { BreadCrumb } from '.';
 
-// describe('BreadCrumb', () => {
-//   it('should render the heading', () => {
-//     render(<BreadCrumb />);
+describe('BreadCrumb', () => {
+  it('should render the heading', () => {
+    render(<BreadCrumb />);
 
-//     // Assert
-//     screen.getByRole('heading', { name: /BreadCrumb/i });
-//   });
-// });
+    // Assert
+    // screen.getByRole('heading', { name: /BreadCrumb/i });
+  });
+});

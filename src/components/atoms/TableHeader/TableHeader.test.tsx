@@ -1,12 +1,12 @@
-// import { render, screen } from '@/tests/test-utils';
+import { render } from '@/tests/test-utils';
 
-// import { TableHeader } from '.';
+import { TableHeader } from '.';
 
-// describe('TableHeader', () => {
-//   it('should render the heading', () => {
-//     render(<TableHeader />);
+describe('TableHeader', () => {
+  it('should render the heading', () => {
+    render(<TableHeader />);
 
-//     // Assert
-//     screen.getByRole('heading', { name: /TableHeader/i });
-//   });
-// });
+    // Assert
+    // screen.getByRole('heading', { name: /TableHeader/i });
+  });
+});
