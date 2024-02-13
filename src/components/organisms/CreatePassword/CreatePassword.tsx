@@ -85,15 +85,15 @@ export const CreatePasswordForm: FC<CreatePasswordFormProps> = () => {
   };
 
   return (
-    <div className="CreatePasswordForm">
-      <div className="flex flex-col items-right gap-3 h-full w-full">
+    <div className="container CreatePasswordForm">
+      <div className="d-flex flex-column align-items-end gap-3 h-100 w-100">
         <LoginTitle title={'Welcome'} subTitle={'Please enter your login credentials to proceed'}>
-          <hr className=" w-full" />
+          <hr className="w-100" />
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="w-full h-full flex flex-col justify-between"
+            className="w-100 h-100 d-flex flex-column justify-content-between"
           >
-            <div className="flex  flex-col justify-between w-full  gap-8 textInput">
+            <div className="d-flex flex-column justify-content-between w-100 gap-4 textInput">
               <PasswordInput
                 register={register(recoveryPasswordField?.password)}
                 label="Create Password"
@@ -112,18 +112,18 @@ export const CreatePasswordForm: FC<CreatePasswordFormProps> = () => {
               {loginError && <Message severity="error" text={loginError} />}
             </div>
 
-            <div className="flex flex-col gap-1 buttonText">
+            <div className="d-flex flex-column gap-1 buttonText">
               <Button type="submit" buttonText="Sign Up" className="bg-primary-500 h-12" />
             </div>
-            <div className="flex flex-col gap-1">
+            <div className="d-flex flex-column gap-1">
               {/* <div
-                onClick={(): void => {
-                  signUp();
-                }}
-                className="bg-secundary-100"
-              >
-                Sign up
-              </div> */}
+            onClick={(): void => {
+              signUp();
+            }}
+            className="bg-secondary-100"
+          >
+            Sign up
+          </div> */}
             </div>
           </form>
         </LoginTitle>

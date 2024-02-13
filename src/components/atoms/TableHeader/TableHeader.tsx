@@ -19,7 +19,7 @@ export const TableHeader: FC<TableHeaderProps> = ({ nameView, add, visible, setV
   };
 
   return (
-    <div className="flex-container">
+    <div className="d-flex flex-container">
       <h3 className="titleView">{nameView}</h3>
       {add && <Button className="button-container" buttonText={'Add user'} onClick={handleModal} />}
       <div className="filter-container">

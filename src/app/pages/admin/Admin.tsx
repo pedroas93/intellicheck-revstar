@@ -5,8 +5,8 @@ import { UserView } from '@/components/organisms/UserView/UserView';
 
 export const Admin: FC = () => {
   return (
-    <div className="flex w-full bg-white justify-center   rounded-3xl h-[100vw] ">
-      <div className="flex w-full bg-white justify-center flex-wrap rounded-3xl">
+    <div className="d-flex w-100 bg-white justify-content-center rounded-3">
+      <div className="d-flex w-100 bg-white justify-content-center flex-wrap rounded-3">
         <UserView />
       </div>
     </div>

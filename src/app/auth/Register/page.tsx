@@ -7,7 +7,7 @@ import { RegisterForm } from '@/components/organisms/Register';
 
 const Register: FC = () => {
   return (
-    <div className="flex flex-col items-center  gap-3 h-full w-full">
+    <div className="d-flex flex-column align-items-center gap-3 h-100 w-100">
       <RegisterForm />
     </div>
   );

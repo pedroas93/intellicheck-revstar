@@ -69,9 +69,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         children={
           <>
             {loading ? (
-              <div className="flex flex-row "></div>
+              <div className="d-flex flex-row"></div>
             ) : (
-              <div className="flex flex-row align-middle items-center">
+              <div className="d-flex flex-row align-items-center">
                 {buttonText && <>{buttonText}</>} {children}
               </div>
             )}

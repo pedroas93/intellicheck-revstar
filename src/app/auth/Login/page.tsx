@@ -34,7 +34,7 @@ const Login: React.FC = () => {
   return (
     <>
       <MainLayout>
-        <div className="flex flex-col items-center gap-3 h-full w-full">
+        <div className="d-flex flex-column align-items-center gap-3 h-100 w-100">
           {loginMfa ? <LoginForm handleSuccessLogin={successFirstLogin} /> : <p>ERROR PAGE</p>}
         </div>
       </MainLayout>

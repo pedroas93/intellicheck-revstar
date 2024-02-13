@@ -55,28 +55,22 @@ export const SuccessProcess: FC<SuccessProcess> = () => {
   };
 
   return (
-    <div className="SuccessProcess">
-      <div className="flex flex-col items-right  gap-3 h-full w-full">
+    <div className="container SuccessProcess">
+      <div className="d-flex flex-column items-end gap-3 h-100 w-100">
         <LoginTitle
           title={'Success'}
           subTitle={'The process was completed successfully, you can now login'}
         >
-          <hr className=" w-full" />
+          <hr className="w-100" />
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="w-full h-full flex flex-col justify-between"
+            className="w-100 h-100 d-flex flex-column justify-content-between"
           >
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-              }}
-            >
+            <div className="d-flex justify-content-center align-items-center">
               <img src={'/assets/Images/png/DigitalKey.png'} alt="Description of the Image" />
             </div>
 
-            <div className="flex flex-col gap-1 buttonText">
+            <div className="d-flex flex-column gap-1 buttonText">
               <Button
                 type="submit"
                 buttonText="Login"

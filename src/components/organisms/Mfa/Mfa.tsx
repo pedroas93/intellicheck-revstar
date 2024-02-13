@@ -116,24 +116,24 @@ export const Mfa: FC<MfaProps> = ({
   // };
 
   return (
-    <div className="flex flex-col items-center  gap-3 h-full">
+    <div className="container-fluid d-flex flex-column align-items-center gap-3 h-100">
       <LoginTitle title={title} subTitle={subTitle}>
-        <hr className=" w-full" />
-        <div className="flex  flex-col justify-between h-full  gap-5">
-          <div className="flex flex-col gap-5">
-            <div className="flex justify-between gap-2">
+        <hr className="w-100" />
+        <div className="d-flex flex-column justify-content-between h-100 gap-5">
+          <div className="d-flex flex-column gap-5">
+            <div className="d-flex justify-content-between gap-2">
               {emailAllow && (
                 <div style={{ width: '52%' }}>
                   <Input disabled defaultValue={labelData} label="code" required />
                 </div>
               )}
-              {/* <div className="flex self-end">
-                <Button
-                  buttonText="Resend Code"
-                  onClick={handleSendCode}
-                  className={`bg-primary-500 h-10`}
-                />
-              </div> */}
+              {/* <div className="d-flex self-end">
+            <Button
+              buttonText="Resend Code"
+              onClick={handleSendCode}
+              className={`bg-primary-500 h-10`}
+            />
+          </div> */}
             </div>
 
             <div>{resentMessage && <ToastMfa onClose={closeResentMessage} />}</div>
@@ -146,30 +146,30 @@ export const Mfa: FC<MfaProps> = ({
             </div>
             {errorMessage && <Message severity="error" text={errorMessage} />}
           </div>
-          <div className=" texts-send-code ">
+          <div className="texts-send-code">
             {showBackButton && (
               <>
-                <div className="text-didnt-receive ">
+                <div className="text-didnt-receive">
                   <span>Didn’t Receive a Code?</span>
                 </div>
-                <div onClick={handleSendCode} className="bg-secundary-200">
+                <div onClick={handleSendCode} className="bg-secondary-200">
                   Send Code
                 </div>
               </>
             )}
           </div>
 
-          <div className="flex flex-col gap-1 buttonText">
+          <div className="d-flex flex-column gap-1 buttonText">
             <Button
               onClick={handleSendMfa}
               buttonText={buttonText}
-              className={` h-12 ${codeMfa ? 'bg-primary-500' : 'bg-gray-300'}`}
+              className={`h-12 ${codeMfa ? 'bg-primary-500' : 'bg-gray-300'}`}
               disabled={!codeMfa}
             />
           </div>
-          <div className="flex flex-col gap-1">
+          <div className="d-flex flex-column gap-1">
             {showBackButton && (
-              <div onClick={backTo} className="bg-secundary-100">
+              <div onClick={backTo} className="bg-secondary-100">
                 Back
               </div>
             )}

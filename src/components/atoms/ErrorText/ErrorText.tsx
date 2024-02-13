@@ -7,9 +7,7 @@ interface Props {
 export const ErrorText: FC<Props> = ({ error }) => (
   <>
     {error && (
-      <div className={'font-inter text-[13px] leading-4 tracking-[-0.7px] text-red-500'}>
-        {error}
-      </div>
+      <div className="font-inter text-13 leading-4 tracking--0.7px text-danger">{error}</div>
     )}
   </>
 );

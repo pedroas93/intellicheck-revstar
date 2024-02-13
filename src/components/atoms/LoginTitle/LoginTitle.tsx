@@ -10,17 +10,17 @@ interface LoginTitleProps {
 
 export const LoginTitle: FC<LoginTitleProps> = ({ title, subTitle, children }) => {
   return (
-    <div className="flex flex-col items-start gap-3 h-full w-full">
+    <div className="d-flex flex-column items-start gap-3 h-100 w-100">
       <div className="text-primary-800 text-4xl font-bold leading-normal tracking-wide">
         {title}
-        <span className="text-blue-500">!</span>
+        <span className="text-primary">!</span>
       </div>
       {subTitle && (
         <div className="text-left text-gray-300 font-normal text-base leading-5 tracking-wide">
           {subTitle}
         </div>
       )}
-      <div className="flex flex-col justify-between h-full w-full gap-5">{children}</div>
+      <div className="d-flex flex-column justify-content-between h-100 w-100 gap-4">{children}</div>
     </div>
   );
 };

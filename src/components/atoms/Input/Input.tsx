@@ -28,12 +28,12 @@ export const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = ({
   onChange,
   ...props
 }) => (
-  <div className={`flex flex-col gap-2 ${wrapperClassName}`}>
+  <div className={`d-flex flex-column gap-2 ${wrapperClassName}`}>
     <Label label={label} required={required} />
 
     <div className="relative">
       <input
-        className={` input ${className} ${readOnly && 'bg-white'}`}
+        className={`form-control ${className} ${readOnly && 'bg-white'}`}
         style={{ backgroundColor: readOnly ? '#ffffff' : '#F3F5FA' }}
         onChange={onChange}
         readOnly={readOnly}

@@ -19,7 +19,7 @@ export const SecondFARegister: FC = () => {
   // const servicePath = 'verify-code';
 
   return (
-    <div className="flex flex-col items-center  gap-3 h-full w-full">
+    <div className="container-flex flex-column items-center gap-3 h-100 w-100">
       <Mfa
         title={title}
         subTitle={subtitle}

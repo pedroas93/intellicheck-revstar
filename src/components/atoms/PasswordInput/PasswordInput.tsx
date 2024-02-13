@@ -55,28 +55,28 @@ const PasswordInputComponent: ForwardRefRenderFunction<HTMLInputElement, InputPr
     key: number
   ): ReactElement => {
     return (
-      <div className="flex gap-1 items-center" key={key}>
+      <div className="d-flex gap-1 align-items-center" key={key}>
         <div
-          className={` w-2 h-2 rounded-full ${
+          className={`w-2 h-2 rounded-circle ${
             complete ? `${statusColor}` : `opacity-10 ${statusColor}`
           }`}
         >
           {' '}
         </div>{' '}
-        {message && <div className="font-semibold text-gray-600">{message}</div>}
+        {message && <div className="font-weight-bold text-gray-600">{message}</div>}
       </div>
     );
   };
 
   return (
-    <div className="flex flex-col gap-2">
-      <div className="flex justify-between font-semibold text-gray-600 ">
+    <div className="d-flex flex-column gap-2">
+      <div className="d-flex justify-content-between font-weight-bold text-gray-600">
         <Label label={label} required={required} />
 
         {passWordValidations?.length ? (
-          <div className="flex gap-1 items-center">
+          <div className="d-flex gap-1 align-items-center">
             {passWordValidations?.length && <div> {statusLabel} </div>}
-            <div className="flex gap-1 items-center">
+            <div className="d-flex gap-1 align-items-center">
               {passWordValidations?.map((data, key) => {
                 return renderPasswordsValidations('', data.complete || false, key);
               })}
@@ -89,7 +89,7 @@ const PasswordInputComponent: ForwardRefRenderFunction<HTMLInputElement, InputPr
           ref={ref}
           {...register}
           {...props}
-          className={`input ${inputClassName(error as string)}`}
+          className={`form-control ${inputClassName(error as string)}`}
           style={{ backgroundColor: '#F3F5FA' }}
           type={changeType}
         />

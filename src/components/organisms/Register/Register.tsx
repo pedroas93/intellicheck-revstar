@@ -96,22 +96,22 @@ export const RegisterForm: FC<RegisterFormProps> = () => {
   };
 
   return (
-    <div className="RegisterForm">
-      <div className="flex flex-col items-right  gap-3 h-full w-full">
+    <div className="container RegisterForm">
+      <div className="d-flex flex-column align-items-end gap-3 h-100 w-100">
         <LoginTitle title={'Welcome'} subTitle={'Please enter your login credentials to proceed'}>
-          <hr className=" w-full" />
+          <hr className="w-100" />
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="w-full h-full flex flex-col justify-between"
+            className="w-100 h-100 d-flex flex-column justify-content-between"
           >
-            <div className="flex  flex-col justify-between w-full  gap-8 textInput">
+            <div className="d-flex flex-column justify-content-between w-100 gap-8 textInput">
               {/* <Input
-                register={register(registerFields?.email)}
-                label="User Name"
-                placeholder="User Name"
-                required
-                error={errors[registerFields?.email]?.message}
-              /> */}
+            register={register(registerFields?.email)}
+            label="User Name"
+            placeholder="User Name"
+            required
+            error={errors[registerFields?.email]?.message}
+          /> */}
               <Input
                 // register={register(registerFields?.email)}
                 label="Email Address"
@@ -122,14 +122,14 @@ export const RegisterForm: FC<RegisterFormProps> = () => {
               />
               {loginError && <Message severity="error" text={loginError} />}
             </div>
-            <div className="flex justify-between w-full h-[24px] my-8">
+            <div className="d-flex justify-content-between w-100 h-24 my-8">
               <>
-                <span className="font-inter text-sm leading-[17px] tracking-[-0.7px] font-semibold text-gray-600 w-full h-4 text-xs font-normal leading-4 tracking-tighter">
+                <span className="font-inter text-sm leading-17 tracking--0.7px font-semibold text-gray-600 w-full h-4 text-xs font-normal leading-4 tracking-tighter">
                   Already have an account?
                 </span>
                 <div
                   onClick={goLogin}
-                  className="bg-secundary-200 flex items-center justify-end w-full h-full"
+                  className="bg-secondary-200 d-flex items-center justify-end w-100 h-100"
                 >
                   <div
                     style={{
@@ -148,7 +148,7 @@ export const RegisterForm: FC<RegisterFormProps> = () => {
                 </div>
               </>
             </div>
-            <div className="flex flex-col gap-1 buttonText">
+            <div className="d-flex flex-column gap-1 buttonText">
               <Button
                 type="submit"
                 buttonText="Create Password"

@@ -57,7 +57,6 @@ export const LoginForm: FC<LoginFormProps> = () => {
       const apiUrl = 'http://localhost:3000/login';
 
       // eslint-disable-next-line no-console
-      console.log('What is data ---> ', data);
 
       const response = await axios.post(apiUrl, data);
       // eslint-disable-next-line no-console
@@ -76,15 +75,15 @@ export const LoginForm: FC<LoginFormProps> = () => {
   };
 
   return (
-    <div className="LoginForm">
-      <div className="flex flex-col items-right  gap-3 h-full w-full">
+    <div className="container LoginForm">
+      <div className="d-flex flex-column align-items-end gap-3 h-100 w-100">
         <LoginTitle title={'Welcome'} subTitle={'Please enter your login credentials to proceed'}>
-          <hr className=" w-full" />
+          <hr className="w-100" />
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="w-full h-full flex flex-col justify-between"
+            className="w-100 h-100 d-flex flex-column justify-content-between"
           >
-            <div className="flex  flex-col justify-between w-full  gap-8 textInput">
+            <div className="d-flex flex-column justify-content-between w-100 gap-3 textInput">
               <Input
                 register={register(loginFields?.email as string)}
                 label="Email Address"
@@ -101,47 +100,38 @@ export const LoginForm: FC<LoginFormProps> = () => {
               />
               {loginError && <Message severity="error" text={loginError} />}
             </div>
-            <div className="flex justify-between w-full h-[24px] my-8">
-              <>
-                <Toggle
-                  checked={false}
-                  checkedClassName="bg-green-500"
-                  label="Remember Me"
-                  labelClassName="font-inter text-sm leading-[17px] tracking-[-0.7px] font-semibold text-gray-600 w-24 h-4 text-xs font-normal leading-4 tracking-tighter"
-                />
+            <div className="d-flex justify-content-between w-100 h-24">
+              <Toggle
+                checked={false}
+                checkedClassName="bg-success"
+                label="Remember Me"
+                labelClassName="font-inter text-sm leading-17 tracking--0.7px font-semibold text-gray-600 w-24 h-4 text-xs font-normal leading-4 tracking-tighter"
+              />
+              <div
+                onClick={handleForgotPassword}
+                className="bg-secondary-200 d-flex items-center justify-end w-100 h-100"
+              >
                 <div
-                  onClick={handleForgotPassword}
-                  className="bg-secundary-200 flex items-center justify-end w-full h-full"
+                  style={{
+                    color: '#0091FC',
+                    width: '93px',
+                    height: '15px',
+                    fontSize: '12px',
+                    fontWeight: 400,
+                    lineHeight: '15px',
+                    letterSpacing: '-0.02em',
+                    textAlign: 'center'
+                  }}
                 >
-                  <div
-                    style={{
-                      color: '#0091FC',
-                      width: '93px',
-                      height: '15px',
-                      fontSize: '12px',
-                      fontWeight: 400,
-                      lineHeight: '15px',
-                      letterSpacing: '-0.02em',
-                      textAlign: 'center'
-                    }}
-                  >
-                    Forgot Password
-                  </div>
+                  Forgot Password
                 </div>
-              </>
+              </div>
             </div>
-            <div className="flex flex-col gap-1 buttonText">
+            <div className="d-flex flex-column gap-1 buttonText">
               <Button type="submit" buttonText="Login" className="bg-primary-500 h-12" />
             </div>
-            <div className="flex flex-col gap-1">
-              {/* <div
-                onClick={(): void => {
-                  signUp();
-                }}
-                className="bg-secundary-100"
-              >
-                Sign up
-              </div> */}
+            <div className="d-flex flex-column gap-1">
+              {/* <div onClick={signUp} className="bg-secondary-100">Sign up</div> */}
             </div>
           </form>
         </LoginTitle>

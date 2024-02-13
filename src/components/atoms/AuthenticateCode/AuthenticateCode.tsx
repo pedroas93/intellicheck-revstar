@@ -13,10 +13,10 @@ export const AuthenticateCode: FC<AuthenticateProps> = ({ handleOnChange, requir
   const AuthInputRef = useRef<AuthCodeRef>(null);
 
   return (
-    <div className="flex flex-col gap-2">
-      <div className="font-semibold text-gray-600 ">
+    <div className="d-flex flex-column gap-2">
+      <div className="font-semibold text-gray-600">
         <div>
-          {label} {required && <span className="text-red-ERROR">*</span>}
+          {label} {required && <span className="text-danger">*</span>}
         </div>
       </div>
       <AuthCode
@@ -26,8 +26,8 @@ export const AuthenticateCode: FC<AuthenticateProps> = ({ handleOnChange, requir
             handleOnChange(result);
           }
         }}
-        containerClassName="flex gap-2 justify-between"
-        inputClassName="w-10 h-10 text-24 text-center  border bg-gray-200 rounded"
+        containerClassName="d-flex gap-2 justify-content-between"
+        inputClassName="w-10 h-10 text-24 text-center border bg-gray-200 rounded"
       />
     </div>
   );

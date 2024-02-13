@@ -19,8 +19,8 @@ export const Toggle: FC<AvatarProps> = ({
   labelClassName = 'text-[13px]'
 }) => {
   return (
-    <div className="flex items-center justify-center gap-2">
-      <div className="flex items-center">
+    <div className="d-flex items-center justify-content-between gap-2">
+      <div className="d-flex items-center">
         <label className="switch">
           <input type="checkbox" checked={checked} onChange={(data) => onChecked?.(data)} />
           <span className={`slider round ${checked ? checkedClassName : ''}`} />
