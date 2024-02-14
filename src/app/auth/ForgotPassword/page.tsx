@@ -9,7 +9,7 @@ import { MainLayout } from '@/components/templates/MainLayout';
 const ForgotPassword: FC = () => {
   return (
     <MainLayout>
-      <div className="d-flex flex-column align-items-center gap-3 h-100 w-100">
+      <div className="d-flex flex-column align-items-center gap-3 h-100 w-100 py-4">
         <ForgotPasswordForm />
       </div>
     </MainLayout>
