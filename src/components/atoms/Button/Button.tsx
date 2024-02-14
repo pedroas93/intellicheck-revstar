@@ -9,16 +9,15 @@ export function cn(...inputs: Array<ClassValue>) {
 }
 
 export const buttonVariants = cva(
-  'inline-flex items-center justify-center   bg-primary-900 disabled:pointer-events-none disabled:opacity-50 bg-gray-250 text-white rounded-2xl transition-colors	transition-duration: 250ms pl-6 pr-6  ',
+  'd-inline-flex align-items-center justify-content-center bg-primary-900 pointer-events-none bg-gray-250 text-white rounded-4 transition transition-duration-250 p-3',
   {
     variants: {
       variant: {
         base: 'text-base',
         primary: 'bg-primary-500 h-12',
-        gold: 'bg-gold-500/[.12] text-gold-500 rounded-2xl pl-4 pr-4  hover:bg-gold-350 font-semibold',
-        gray: 'bg-gray-200 rounded-2xl text-primary pl-4 pr-4  hover:bg-primary hover:text-white font-semibold',
+        gray: 'bg-gray-200 rounded-2xl text-primary pl-4 pr-4 hover:bg-primary hover:text-white font-semibold',
         white:
-          'bg-white text-primary border border-primary rounded-2xl pl-4 pr-4  hover:bg-primary hover:text-white font-semibold p-2 font-bold',
+          'bg-white text-primary border border-primary rounded-2xl pl-4 pr-4 hover:bg-primary hover:text-white font-semibold p-2 font-bold',
         danger: '',
         success: '',
         info: '',
@@ -28,7 +27,7 @@ export const buttonVariants = cva(
       size: {
         primary: 'h-8',
         small: 'h-8 text-[13px]',
-        large: 'h-12 '
+        large: 'h-12'
       }
     },
     defaultVariants: {
@@ -55,7 +54,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp
         style={{
-          backgroundColor: '#020E33'
+          backgroundColor: '#020E33',
+          height: '40px',
+          borderColor: '#020E33'
         }}
         className={cn(
           buttonVariants({
@@ -67,7 +68,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         // eslint-disable-next-line react/no-children-prop
         children={
-          <>
+          <div>
             {loading ? (
               <div className="d-flex flex-row"></div>
             ) : (
@@ -75,7 +76,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 {buttonText && <>{buttonText}</>} {children}
               </div>
             )}
-          </>
+          </div>
         }
         {...props}
       />

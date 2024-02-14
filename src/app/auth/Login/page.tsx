@@ -4,7 +4,7 @@
 
 import React, { useState } from 'react';
 
-import { LoginForm } from '@/components/organisms/LoginForm';
+import { LoginForm } from '@/components/molecules/LoginForm';
 import { MainLayout } from '@/components/templates/MainLayout';
 
 type LoginData = {
@@ -28,14 +28,15 @@ const Login: React.FC = () => {
     '*******'
   )}@${emailParts[1]}`;
 
-  // eslint-disable-next-line no-console
-  console.log('hiddenEmail', hiddenEmail);
-
   return (
     <>
       <MainLayout>
         <div className="d-flex flex-column align-items-center gap-3 h-100 w-100">
-          {loginMfa ? <LoginForm handleSuccessLogin={successFirstLogin} /> : <p>ERROR PAGE</p>}
+          {loginMfa ? (
+            <LoginForm handleSuccessLogin={successFirstLogin} />
+          ) : (
+            <p>ERROR PAGE {hiddenEmail}</p>
+          )}
         </div>
       </MainLayout>
     </>

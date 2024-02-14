@@ -16,7 +16,6 @@ import React from 'react';
 // import { ProductService } from 'src/services/productService';
 
 export const Table = () => {
-  // eslint-disable-next-line prefer-const
   // let emptyProduct = {
   //   id: null,
   //   name: '',

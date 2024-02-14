@@ -3,13 +3,16 @@
 import { type FC } from 'react';
 import React from 'react';
 
-import { SecondFARegister } from '@/components/organisms/SecondFARegister';
+import { SecondFARegister } from '@/components/molecules/SecondFARegister';
+import { MainLayout } from '@/components/templates/MainLayout';
 
 const MFA: FC = () => {
   return (
-    <div className="d-flex flex-column align-items-center gap-3 h-100 w-100">
-      <SecondFARegister />
-    </div>
+    <MainLayout>
+      <div className="d-flex flex-column align-items-center gap-3 h-100 w-100">
+        <SecondFARegister />
+      </div>
+    </MainLayout>
   );
 };
 

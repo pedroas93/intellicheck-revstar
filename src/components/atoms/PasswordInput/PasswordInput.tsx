@@ -25,8 +25,7 @@ const PasswordInputComponent: ForwardRefRenderFunction<HTMLInputElement, InputPr
   { label, error, register, required, passWordValidations, ...props },
   ref
 ) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [changeType, setChangeType] = useState<string>('password');
+  const [changeType] = useState<string>('password');
   const [statusLabel, setStatusLabel] = useState<string>('Bad');
   const [statusColor, setStatusColor] = useState<string>('bg-red-ERROR');
 
@@ -90,7 +89,13 @@ const PasswordInputComponent: ForwardRefRenderFunction<HTMLInputElement, InputPr
           {...register}
           {...props}
           className={`form-control ${inputClassName(error as string)}`}
-          style={{ backgroundColor: '#F3F5FA' }}
+          style={{
+            backgroundColor: '#F3F5FA',
+            borderRadius: '15px',
+            height: '50px',
+            padding: '15px !important',
+            borderColor: '#F3F5FA'
+          }}
           type={changeType}
         />
       </div>

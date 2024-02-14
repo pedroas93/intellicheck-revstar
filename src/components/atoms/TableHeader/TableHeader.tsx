@@ -9,8 +9,7 @@ interface TableHeaderProps {
   nameView?: string;
   add?: boolean;
   visible: boolean;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  setVisible: (value: any) => void;
+  setVisible: (value: boolean) => void;
 }
 
 export const TableHeader: FC<TableHeaderProps> = ({ nameView, add, visible, setVisible }) => {

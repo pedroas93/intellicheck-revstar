@@ -20,16 +20,22 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
   // const wrapperStyles = cn('flex flex-col min-h-screen', className);
 
   return (
-    <div
-      className="d-flex bg-cover bg-center w-100 h-100 p-6 overflow-auto Login-layout-container"
-      data-testid="login-layout-container"
-    >
+    <div className="container-fluid d-flex w-100 p-3" data-testid="login-layout-container">
       <div
-        className="flex-1 bg-cover bg-no-repeat bg-center rounded-md"
-        style={{ backgroundImage: 'url("/assets/Images/png/BG.png")' }}
+        className="col-md-6 d-flex bg-cover bg-no-repeat bg-center rounded-md"
+        style={{
+          backgroundImage: 'url("/assets/Images/png/BG.png")',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          minHeight: '98vh'
+        }}
       ></div>
-      <div className="flex-1 d-flex align-items-center justify-content-center container gap-7 p-6 rounded-lg bg-white ms-auto">
-        <main>{children}</main>
+      <div
+        className="col-md-6 d-flex align-items-center justify-content-center gap-4 p-5 rounded bg-white"
+        style={{ padding: '10rem !important' }}
+      >
+        {children}
       </div>
     </div>
   );

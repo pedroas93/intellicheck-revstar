@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import React from 'react';
 
-import { UserView } from '@/components/organisms/UserView/UserView';
+import { UserView } from '@/components/molecules/UserView/UserView';
 
 export const Admin: FC = () => {
   return (

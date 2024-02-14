@@ -42,11 +42,6 @@ export const LoginForm: FC<LoginFormProps> = () => {
     resolver: zodResolver(LoginSchema)
   });
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const signUp = (): void => {
-    // void navigate({ to: `/register` });
-  };
-
   const handleForgotPassword = (): void => {
     router.push('/forgotPassword');
   };
@@ -56,11 +51,7 @@ export const LoginForm: FC<LoginFormProps> = () => {
     try {
       const apiUrl = 'http://localhost:3000/login';
 
-      // eslint-disable-next-line no-console
-
       const response = await axios.post(apiUrl, data);
-      // eslint-disable-next-line no-console
-      console.log('Response Data:', response.data);
 
       if (response.data.role === 'superAdmin') {
         // const componentName = 'Login';
@@ -100,27 +91,24 @@ export const LoginForm: FC<LoginFormProps> = () => {
               />
               {loginError && <Message severity="error" text={loginError} />}
             </div>
-            <div className="d-flex justify-content-between w-100 h-24">
+            <div className="d-flex justify-content-between w-100 h-24 py-4">
               <Toggle
                 checked={false}
                 checkedClassName="bg-success"
                 label="Remember Me"
                 labelClassName="font-inter text-sm leading-17 tracking--0.7px font-semibold text-gray-600 w-24 h-4 text-xs font-normal leading-4 tracking-tighter"
               />
-              <div
-                onClick={handleForgotPassword}
-                className="bg-secondary-200 d-flex items-center justify-end w-100 h-100"
-              >
+              <div onClick={handleForgotPassword} className="d-flex justify-end">
                 <div
                   style={{
                     color: '#0091FC',
-                    width: '93px',
+                    width: '130px',
                     height: '15px',
-                    fontSize: '12px',
+                    fontSize: '16px',
                     fontWeight: 400,
                     lineHeight: '15px',
                     letterSpacing: '-0.02em',
-                    textAlign: 'center'
+                    textAlign: 'right'
                   }}
                 >
                   Forgot Password

@@ -24,9 +24,7 @@ export const SuccessProcess: FC<SuccessProcess> = () => {
   const [, setLoginError] = useState<string | null>(null);
   const {
     // register,
-    handleSubmit,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    formState: { errors }
+    handleSubmit
   } = useForm<FieldValues>({
     resolver: zodResolver(LoginSchema)
   });

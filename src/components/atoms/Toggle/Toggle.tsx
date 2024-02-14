@@ -4,8 +4,7 @@ import type { FC } from 'react';
 
 interface AvatarProps {
   checked?: boolean;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onChecked?: (value: any) => void;
+  onChecked?: (value: boolean) => void;
   checkedClassName?: string;
   label?: string;
   labelClassName?: string;
@@ -19,7 +18,10 @@ export const Toggle: FC<AvatarProps> = ({
   labelClassName = 'text-[13px]'
 }) => {
   return (
-    <div className="d-flex items-center justify-content-between gap-2">
+    <div
+      className="d-flex items-center justify-content-between gap-2"
+      style={{ alignItems: 'center' }}
+    >
       <div className="d-flex items-center">
         <label className="switch">
           <input type="checkbox" checked={checked} onChange={(data) => onChecked?.(data)} />
@@ -31,9 +33,9 @@ export const Toggle: FC<AvatarProps> = ({
           className={labelClassName}
           style={{
             color: '#020E33',
-            width: '93px',
+            width: '130px',
             height: '15px',
-            fontSize: '12px',
+            fontSize: '14px',
             fontWeight: 400,
             lineHeight: '15px',
             letterSpacing: '-0.02em',

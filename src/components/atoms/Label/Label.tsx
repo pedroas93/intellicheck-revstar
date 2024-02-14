@@ -14,7 +14,7 @@ export const Label: FC<Props> = ({ label, required }) => (
           color: '#4E5771',
           width: '120px',
           height: '15px',
-          fontSize: '12px',
+          fontSize: '16px',
           fontWeight: 400,
           lineHeight: '15px',
           letterSpacing: '-0.02em',
@@ -27,7 +27,7 @@ export const Label: FC<Props> = ({ label, required }) => (
             <span className="text-danger ml-1">
               <span
                 style={{ color: '#FF0033' }}
-                className="ml-1 w-5 h-15 text-xs font-normal leading-15 tracking--0.02em text-left"
+                className="ml-1 w-5 h-15 text-xs font-normal leading-15 p-1 tracking--0.02em text-left"
               >
                 *
               </span>

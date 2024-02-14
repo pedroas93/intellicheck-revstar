@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import React from 'react';
 
-import { Mfa } from '@/components/organisms/Mfa';
+import { Mfa } from '@/components/molecules/Mfa';
 
 import { userEmail } from '../../../utils/constant';
 import { getLocalStorage } from '../../../utils/local-storage';

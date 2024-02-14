@@ -13,8 +13,7 @@ import { Button } from '@/components/atoms/Button';
 import { LoginTitle } from '@/components/atoms/LoginTitle';
 import { PasswordInput } from '@/components/atoms/PasswordInput';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import type { RecoveryPassword, PasswordValidations } from '../../../types/validations';
+import type { PasswordValidations } from '../../../types/validations';
 // import { getLocalStorage } from '../../../utils/local-storage';
 import { recoveryPasswordField } from '../../../utils/Schemas/input-fields';
 import { RecoverySchema } from '../../../utils/Schemas/LoginSchemas';

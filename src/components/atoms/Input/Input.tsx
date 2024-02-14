@@ -34,7 +34,14 @@ export const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = ({
     <div className="relative">
       <input
         className={`form-control ${className} ${readOnly && 'bg-white'}`}
-        style={{ backgroundColor: readOnly ? '#ffffff' : '#F3F5FA' }}
+        style={{
+          backgroundColor: readOnly ? '#ffffff' : '#F3F5FA',
+          borderRadius: '15px',
+          height: '50px',
+          padding: '15px !important',
+          borderColor: '#F3F5FA'
+          // color: '#B4B7C2'
+        }}
         onChange={onChange}
         readOnly={readOnly}
         {...props}
